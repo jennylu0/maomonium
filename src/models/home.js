@@ -6,8 +6,8 @@ const homeData = {
             title: "item title",
             category: "category1",
             social: {
-                twitter: '',
-                tumblr: '',
+                twitter: 'link',
+                tumblr: 'link',
                 instagram: ''
             },
             thumbnail: 'https://placehold.it/500x300',
@@ -35,11 +35,11 @@ const homeData = {
             title: "item title2",
             category: "category1",
             social: {
-                twitter: '',
+                twitter: 'link',
                 tumblr: '',
                 instagram: ''
             },
-            thumbnail: 'https://placehold.it/500x300',
+            thumbnail: 'https://placehold.it/500x500',
             gallery: [
                 {
                     original: "https://placehold.it/300x300",

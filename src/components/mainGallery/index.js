@@ -20,7 +20,7 @@ const imagesLoadedOptions = {};
 const CardList = (cardData) => {
     let data = cardData.props;
     const list = data.map((item, index) =>
-        <Card/>
+        <Card props={item} key={item.id}/>
     );
 
     // const list = data;
@@ -28,7 +28,6 @@ const CardList = (cardData) => {
 
     return (
         list
-        // "test"
     )
 }
 

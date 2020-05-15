@@ -6,40 +6,42 @@ import { faTumblr } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const card = (props) => {
-
+    let data = props.props;
+    // console.log(data);
+    
     const handleClick = () => {
         console.log("test click from component");
     }
 
     return (
-        <div className="card" onClick={props.onClick}>
+        <div className="card">
             <div className="card-wrapper">
                 <div className="card-header">
                     <div className="card-header--title-area">
                         <span className="card-header--title">
-                            Title here
+                            {data.title}
                         </span>
                     </div>
                     <div className="card-header--social-area">
-                        <span className="card-header--social-icon">
+                        {data.social.twitter && <span className="card-header--social-icon">
                             <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                        </span>
-                        <span className="card-header--social-icon">
+                        </span>}
+                        {data.social.tumblr && <span className="card-header--social-icon">
                             <a href="#"><FontAwesomeIcon icon={faTumblr} /></a>
-                        </span>
-                        <span className="card-header--social-icon">
+                        </span>}
+                        {data.social.instagram && <span className="card-header--social-icon">
                             <a href="#">
                                 <FontAwesomeIcon icon={faInstagram} />
                             </a>
-                        </span>
+                        </span>}
                     </div>
-                    <div className="card-header--label">
+                    <div className={`card-header--label card-header--label-${data.category}`}>
                         <span className="card-header--label-wrapper"><img src="https://placehold.it/50x50" className="card-header--label-icon"/></span>
                     </div>
                 </div>
                 <div className="card-body">
                     <div className="card-image-wrapper">
-                        <img src="https://placehold.it/500x300" className="card-image" />
+                        <img src={data.thumbnail} className="card-image" />
                     </div>
                 </div>
             </div>
