@@ -1,20 +1,35 @@
-import React from "react";
+import React, {Fragment, useState} from "react";
 import {Link} from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faTumblr } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const card = (props) => {
+import { Modal } from 'react-responsive-modal';
+import ImageGallery from 'react-image-gallery';
+
+const Card = (props) => {
     let data = props.props;
     // console.log(data);
+
+    const [open, setOpen] = useState(false);
+
+    const onOpenModal = () => {
+        console.log("clicked");
+        setOpen(true);
+      };
+     
+    const onCloseModal = () => {
+        setOpen(false);
+    };
     
     const handleClick = () => {
         console.log("test click from component");
     }
 
     return (
-        <div className="card">
+        <Fragment>
+        <div className="card" onClick={onOpenModal}>
             <div className="card-wrapper">
                 <div className="card-header">
                     <div className="card-header--title-area">
@@ -46,7 +61,13 @@ const card = (props) => {
                 </div>
             </div>
         </div>
+
+        <Modal open={open} onClose={onCloseModal} closeOnOverlayClick center>
+            <ImageGallery items={data.gallery} thumbnailPosition="left" showPlayButton={false}/>
+        </Modal>
+
+        </Fragment>
     );
 }
 
-export default card;
+export default Card;
