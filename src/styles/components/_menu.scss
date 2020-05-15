@@ -1,0 +1,25 @@
+.menu {
+    position: absolute;
+    z-index: 100;
+    top: 1em;
+    right: 1em;
+    text-align: right;
+
+    &-container {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    &-item {
+        
+        &--label {
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+        }    
+
+        &--icon {
+    
+        }
+    }
+    }

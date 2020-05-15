@@ -1,0 +1,13 @@
+.logo {
+    &-container {
+        position: fixed;
+        z-index: 100;
+        top: 2em;
+        left: 2em;
+    }
+
+    border-radius: 4px;
+    background: linear-gradient(315deg, #{$melon}, #{$berry});
+    width: 50px;
+    height: 100px;
+}

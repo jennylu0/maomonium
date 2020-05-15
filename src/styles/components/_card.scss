@@ -1,0 +1,103 @@
+.card {
+    // max-width: 350px;
+    &-wrapper {
+        // border: 2px solid $medium-gray;
+        // border-radius: $border-radius;
+        z-index: 10;
+        position: relative;
+        margin-right: .75em;
+        margin-bottom: 1.75em;
+
+        &::after {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $medium-gray;
+            top: .6em;
+            left: .6em;
+            border-radius: $border-radius;
+        }
+    }
+
+    &-header {
+        background-color: #fff;
+        border: 2px solid $medium-gray;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: $border-radius $border-radius 0 0;
+        overflow: hidden;
+        position: relative;
+
+        &--title-area {
+            padding: .5em;
+        }
+
+        &--title {
+            flex: 1 1 auto;
+        }
+
+        &--social-area {
+            flex: 0 0 auto;
+            margin-left: auto;
+            margin-right: 4em;
+            display: flex;
+        }
+
+        &--social-icon {
+            background-color: $light-gray;
+            height: 20px;
+            width: 20px;
+            border-radius: 100%;
+            display: inline-block;
+            margin: 0 .25em;
+
+            svg {
+                color: $berry;
+                display: block;
+            }
+
+            a {
+                position: relative;
+                display: inline-block;
+                top: calc(50% - 1px);
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &--label {
+
+        }
+
+        &--label-wrapper {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+        }
+
+        &--label-icon {
+            display: block;
+            max-height: 100%;
+        }
+    }
+
+    &-body {
+        border-left: 2px solid $medium-gray;
+        border-right: 2px solid $medium-gray;
+        border-bottom: 2px solid $medium-gray;
+        border-radius: 0 0 $border-radius $border-radius;
+        overflow: hidden;
+    }
+
+    &-image-wrapper {
+    }
+
+    &-image {
+        display: block;
+        width: 100%;
+    }
+}

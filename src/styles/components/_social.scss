@@ -1,0 +1,37 @@
+.social {
+    text-align: right;
+    margin-top: 1em;
+
+    &-wrapper {
+        list-style-type: none;
+        margin: 0;
+        display: inline-block;
+    }
+
+    li {        
+        margin-bottom: 5px;
+    }
+
+    &-icon-wrapper {
+        background-color: $light-gray;
+        display: inline-block;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        position: relative;
+
+        svg {
+            color: $berry;
+            display: inline-block;
+            min-height: 15px;
+            min-width: 15px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &-icon {
+    }
+}

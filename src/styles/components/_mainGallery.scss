@@ -1,0 +1,14 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+.main-gallery {
+    // display: flex;
+    // justify-content: flex-start;
+    // flex-wrap: wrap;
+    // width: 100%;
+    // margin-right: -15px;
+
+    .card {
+        // flex: 0 1 calc(100% / 3);
+        width: calc((100% / 3) - 15px);
+    }
+}

@@ -1,0 +1,15 @@
+html, body {
+    font-size: 12px;
+    font-family: $space-mono;
+    height: 100%;
+}
+
+html {
+    background-color: $dark-gray;
+    height: 100%;
+}
+
+footer, .footer {
+    color: #fff;
+    font-size: .8em;
+}

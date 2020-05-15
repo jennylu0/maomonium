@@ -1,0 +1,47 @@
+.intro {
+    margin-top: 120px;
+
+    &-image {
+        border-radius: 100%;
+        overflow: hidden;
+        display: inline-block;
+        transform: translateX(calc((50% + 2em) * -1));
+    }
+
+    &-image-container {
+    }
+
+    &-image--img {
+        display: block;
+        margin: 0;
+        transition: .3s all ease;
+
+        &:hover {
+            transform: rotate(180deg);
+            transition: .3s all ease;
+        }
+    }
+
+    &-desc-container {
+        margin-top: 3.5em;
+    }
+
+    &-desc {
+        background-color: $light-gray;
+        border-radius: 0 5px 5px 5px;
+        position: relative;
+        margin-top: 1em;
+        padding: 1em;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 100%;
+            width: 0;
+            height: 0;
+            border-bottom: 2em solid $light-gray;
+            border-right: 2em solid transparent;
+        }
+    }
+}
