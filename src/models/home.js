@@ -1,10 +1,25 @@
 const homeData = {
     
-    galleryData: [
-        {
+    galleryData: {
+        categories: [
+            {
+                name: "cat1",
+                icon: "https://placehold.it/30x30"
+            },
+            {
+                name: "cat2",
+                icon: "https://placehold.it/30x30"
+            },
+            {
+                name: "cat3",
+                icon: "https://placehold.it/30x30"
+            }
+        ],
+        items: [{
             id: "01",
             title: "item title",
-            category: "category1",
+            category: "category2",
+            icon: "https://placehold.it/30x30",
             social: {
                 twitter: 'link',
                 tumblr: 'link',
@@ -116,8 +131,8 @@ const homeData = {
                     thumbnail: "https://placehold.it/230x430",
                 }
             ]
-        },
-    ]
+        }]
+    }
         
     
 }

@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 import MainGallery from "../components/mainGallery";
 import homeData from "../models/home";
 
-// make main gallery component that recieves data from single json file
 // implement filtering 
 
 const IndexPage = () => (
