@@ -4,6 +4,8 @@ const Filter = (props) => {
     const filterData = props.props;
     // console.log("filterCallback:", props.callback);
 
+    const [isActive, setActive] = useState(false);
+
     const handleFilter = (filter) => {
         // console.log("filter", filter);
         props.callback(filter);

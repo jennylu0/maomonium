@@ -39,8 +39,10 @@ const FilterList = (props) => {
         <Filter props={item} key={index} callback={callbackFunc}/>
     );
 
+    const allBtn = [<Filter props={allLabel} callback={callbackFunc} key="-1"/>];
+    // console.log(list);
     return (
-        list
+        [...allBtn, ...list]
     )
 }
 
@@ -49,6 +51,10 @@ const filterHandler = (filter) => {
     console.log(filter);
 }
 
+const allLabel = {
+    icon: 'https://placehold.it/30x30',
+    name: 'All'
+}
 
 //filtering feature
 //make filters component w/ filter container & items 
@@ -65,6 +71,7 @@ const MainGallery = (data) => {
     const cardData = data.props;
     // console.log(cardData);
 
+    const [activeFilter, setFilter] = useState(null);
       
     return (
         <div className="main-gallery">
