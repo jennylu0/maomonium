@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useState, useEffect} from "react";
 import {Link} from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -10,25 +10,46 @@ import ImageGallery from 'react-image-gallery';
 
 const Card = (props) => {
     let data = props.props;
-    // console.log(data);
+    // console.log(data.category);
 
+    // modal open state
     const [open, setOpen] = useState(false);
+    // card active state
+    const [isActive, setActive] = useState(true);
 
+    let currentFilter = props.filter;
+    let currentCategory = data.category;
+    
     const onOpenModal = () => {
-        console.log("clicked");
         setOpen(true);
       };
      
     const onCloseModal = () => {
         setOpen(false);
     };
-    
-    const handleClick = () => {
-        console.log("test click from component");
-    }
+
+    useEffect(() => {
+        // console.log("current filter " + currentFilter + "// cat: " + currentCategory);
+        
+        if (currentFilter === currentCategory || currentFilter === null || currentFilter === 'all') {
+            let active = true;
+            if(isActive !== active) {
+                setActive(true);
+                // console.log("is active");
+            }
+        } else {
+            let active = false;
+            if(isActive !== active) {
+                setActive(false);
+                // console.log("is not active");
+            }
+        }
+        
+    },[currentFilter, currentCategory]);
 
     return (
         <Fragment>
+        {isActive &&
         <div className="card" onClick={onOpenModal}>
             <div className="card-wrapper">
                 <div className="card-header">
@@ -61,6 +82,7 @@ const Card = (props) => {
                 </div>
             </div>
         </div>
+        } 
 
         <Modal open={open} onClose={onCloseModal} closeOnOverlayClick center>
             <ImageGallery items={data.gallery} thumbnailPosition="left" showPlayButton={false}/>

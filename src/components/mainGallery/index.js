@@ -6,55 +6,6 @@ import 'react-responsive-modal/styles.css';
 // import { Modal } from 'react-responsive-modal';
 // import ImageGallery from 'react-image-gallery';
 
-// MASONRY
-const masonryOptions = {
-    itemSelector: '.card',
-    columnWidth: '.card',
-    gutter: 15,
-    transitionDuration: '.3s',
-    stagger: 15,
-}
-
-const imagesLoadedOptions = {};
-
-// CARDS
-const CardList = (cardData) => {
-    let data = cardData.props;
-    // console.log(data);
-   
-    const list = data.map((item, index) =>
-        <Card props={item} key={index}/>
-    );
-
-    return (
-        list
-    )
-}
-
-const FilterList = (props) => {
-    let data = props.props;
-    let callbackFunc = props.filterCallback;
-
-    const list = data.map((item, index) =>
-        <Filter props={item} key={index} callback={callbackFunc}/>
-    );
-
-    const allBtn = [<Filter props={allLabel} callback={callbackFunc} key="-1"/>];
-    // console.log(list);
-    return (
-        [...allBtn, ...list]
-    )
-}
-
-const filterHandler = (filter) => {
-    console.log("clicked");
-    console.log(filter);
-}
-
-const allLabel = {
-    icon: 'https://placehold.it/30x30',
-    name: 'All'
-}
 
 //filtering feature
 //make filters component w/ filter container & items 
@@ -72,6 +23,57 @@ const MainGallery = (data) => {
     // console.log(cardData);
 
     const [activeFilter, setFilter] = useState(null);
+
+    // MASONRY
+    const masonryOptions = {
+        itemSelector: '.card',
+        columnWidth: '.card',
+        gutter: 15,
+        transitionDuration: '.3s',
+        stagger: 15,
+    }
+
+    const imagesLoadedOptions = {};
+
+    // CARDS
+    const CardList = (cardData) => {
+        let data = cardData.props;
+        // console.log(cardData);
+    
+        const list = data.map((item, index) =>
+            <Card props={item} key={index} filter={cardData.filter}/>
+        );
+
+        return (
+            list
+        )
+    }
+
+    const FilterList = (props) => {
+        let data = props.props;
+        let callbackFunc = props.filterCallback;
+
+        const list = data.map((item, index) =>
+            <Filter props={item} key={index} callback={callbackFunc}/>
+        );
+
+        const allBtn = [<Filter props={allLabel} callback={callbackFunc} key="-1"/>];
+        // console.log(list);
+        return (
+            [...allBtn, ...list]
+        )
+    }
+
+    const filterHandler = (filter) => {
+        // console.log(filter);
+        setFilter(filter);
+    }
+
+    const allLabel = {
+        icon: 'https://placehold.it/30x30',
+        name: 'All',
+        id: 'all'
+    }
       
     return (
         <div className="main-gallery">
@@ -81,9 +83,9 @@ const MainGallery = (data) => {
             <Masonry 
                 className="main-gallery-masonry"
                 options={masonryOptions}
-                imagesLoadedOptions={imagesLoadedOptions}
+                imagesLoadedOptions={imagesLoadedOptions} filter={activeFilter}
                 >
-                <CardList props={cardData.items} filter={'test'}/>
+                <CardList props={cardData.items} filter={activeFilter}/>
             </Masonry>
         </div>
     );
