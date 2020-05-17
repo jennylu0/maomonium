@@ -20,7 +20,7 @@ const imagesLoadedOptions = {};
 // CARDS
 const CardList = (cardData) => {
     let data = cardData.props;
-    console.log(data);
+    // console.log(data);
    
     const list = data.map((item, index) =>
         <Card props={item} key={index}/>
@@ -31,11 +31,12 @@ const CardList = (cardData) => {
     )
 }
 
-const FilterList = (filterData) => {
-    let data = filterData.props;
+const FilterList = (props) => {
+    let data = props.props;
+    let callbackFunc = props.filterCallback;
 
     const list = data.map((item, index) =>
-        <Filter props={item}/>
+        <Filter props={item} key={index} callback={callbackFunc}/>
     );
 
     return (
@@ -43,6 +44,10 @@ const FilterList = (filterData) => {
     )
 }
 
+const filterHandler = (filter) => {
+    console.log("clicked");
+    console.log(filter);
+}
 
 
 //filtering feature
@@ -58,42 +63,20 @@ const FilterList = (filterData) => {
 
 const MainGallery = (data) => {
     const cardData = data.props;
-    console.log(cardData);
-    // const [categories, getCategories] = useState([]);
-
-    // console.log("cardData:", cardData);
-
-    // function setCategories(cardData) {
-    //     let catArray = [];
-    //     cardData.forEach(item => {
-    //         let categoryItem = item.category.toLowerCase();
-    //         if (!(catArray.indexOf(categoryItem) > -1)) {
-    //             catArray.push(categoryItem);
-    //         } else {
-    //             return;
-    //         }
-    //     })
-    
-    //     getCategories([...catArray]);
-
-    //     console.log(catArray);
-    //     console.log(categories);
-    // }
-    
-    // useEffect(() => {
-    //     setCategories(cardData);
-    // }, []);
+    // console.log(cardData);
 
       
     return (
         <div className="main-gallery">
-            <FilterList props={cardData.categories}/>
+            <div className="filter-wrapper">
+                <FilterList props={cardData.categories} filterCallback={filterHandler}/>
+            </div>
             <Masonry 
                 className="main-gallery-masonry"
                 options={masonryOptions}
                 imagesLoadedOptions={imagesLoadedOptions}
                 >
-                <CardList props={cardData.items}/>
+                <CardList props={cardData.items} filter={'test'}/>
             </Masonry>
         </div>
     );

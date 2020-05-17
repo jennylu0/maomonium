@@ -1,21 +1,24 @@
 import React, {useState} from 'react';
 
+const Filter = (props) => {
+    const filterData = props.props;
+    // console.log("filterCallback:", props.callback);
 
+    const handleFilter = (filter) => {
+        // console.log("filter", filter);
+        props.callback(filter);
+    }
 
-const Filter = (data) => {
-    const filterData = data.props;
-    console.log(data);
     return(
-        <div className="filter-wrapper">
-            <div className="filter">
-                <div className="filter-icon-warpper">
+       
+            <div className="filter" onClick={() => handleFilter(filterData.name)}>
+                <div className="filter-icon-wrapper">
                     <img src={filterData.icon} className="filter-icon" />
                 </div>
                 <div className="filter-label">
                     {filterData.name}
                 </div>
             </div>
-        </div>
     )
 }
 

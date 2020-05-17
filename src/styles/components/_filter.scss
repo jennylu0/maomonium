@@ -1,5 +1,25 @@
 .filter {
+    margin-left: .5em;
+    margin-right: .5em;
+
+    
     &-label {
         color: #fff;
     }
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 4em;
+    }
+
+    &-icon {
+    }
+
+    &-icon-wrapper {
+
+    }
+
+
 }
