@@ -1,8 +1,8 @@
 .menu {
-    position: absolute;
+    position: fixed;
     z-index: 100;
-    top: 1em;
-    right: 1em;
+    top: 3em;
+    right: 0em;
     text-align: right;
 
     &-container {
@@ -11,15 +11,36 @@
     }
 
     &-item {
+        text-align: right;
+        margin-bottom: 1.5em;
         
         &--label {
             color: #fff;
-            font-size: 18px;
+            // font-size: 18px;
             font-weight: bold;
+            display: block;
+            padding-right: .5em;
         }    
 
         &--icon {
-    
+            display: inline-block;
+            border-radius: .5em 0 0 .5em;
+            overflow: hidden;
+            position: relative;
+            right: -10px;
+            transition: .3s ease all;
+            background-color: red;
+            height: 30px;
+            width: 40px;
+            img {
+                display: none;
+                width: 40px;
+            }
+
+            &:hover {
+                right: 0;
+                transition: .3s ease all;
+            }
         }
     }
     }
