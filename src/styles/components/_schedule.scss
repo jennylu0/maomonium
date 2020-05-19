@@ -1,0 +1,68 @@
+.schedule {
+    
+    &-wrapper {
+        max-width: 400px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    &-area {
+        &--date {
+            flex: 0 0 100px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        &--info {
+            flex: 1 1 auto;
+        }
+    }
+
+    &-date {
+        &-wrapper {
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 1.5em;
+                left: 1.5em;
+                z-index: -1;
+                border-radius: 15px;
+                background-color: $medium-gray;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        &--dd {
+            font-weight: bold;
+            font-size: 30px;
+            display: block;
+            font-family: $montserrat;
+        }
+
+        &-mmyy {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &-info {
+        &--name {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 18px;
+            display: block;
+        }
+
+        &--location {
+            color: $medium-gray;
+        }
+    }
+
+}
