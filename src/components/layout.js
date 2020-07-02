@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "../styles/main.scss";
 import Sidebar from "./sidebar";
+import "../scripts/gooey-bg";
 import Menu from "./menu";
 
 const Layout = ({ children }) => {
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
               <Menu/>
               {children}
             </div>
+            <canvas id="gooey-bg"></canvas>
           </div>
         </main>
       </div>

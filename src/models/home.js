@@ -3,17 +3,17 @@ const homeData = {
     galleryData: {
         categories: [
             {
-                name: "cat1",
+                name: "Art",
                 id: "category1",
                 icon: "https://placehold.it/30x30"
             },
             {
-                name: "cat2",
+                name: "Merch design",
                 id: "category2",
                 icon: "https://placehold.it/30x30"
             },
             {
-                name: "cat3",
+                name: "Conventions",
                 id: "category3",
                 icon: "https://placehold.it/30x30"
             }

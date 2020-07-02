@@ -4,11 +4,14 @@ import { Link } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const SchedulePage = () => (
+import ContactCard from "../components/contactCard";
+
+const ContactPage = () => (
     <Layout>
         <SEO title="Contact"/>
-        <h1 class="layout-title">Contat</h1>
+        <h1 className="layout-title">Contact</h1>
+        <ContactCard/>
     </Layout>
 );
 
-export default SchedulePage;
+export default ContactPage;
