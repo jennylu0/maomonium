@@ -50,7 +50,7 @@ const Card = (props) => {
     return (
         <Fragment>
         {isActive &&
-        <div className="card" onClick={onOpenModal}>
+        <div className="card" onClick={onOpenModal} style={{color:data.color}}>
             <div className="card-wrapper">
                 {/* <div className="card-header">
                     <div className="card-header--title-area">
@@ -76,8 +76,8 @@ const Card = (props) => {
                     </div>
                 </div> */}
                 <div className="card-body">
+                    <div className="card-title">{data.title}</div>
                     <div className="card-overlay">
-                        <div className="card-title">{data.title}</div>
                     </div>
                     <div className="card-image-wrapper">
                         <img src={data.thumbnail} className="card-image" />

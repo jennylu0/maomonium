@@ -1,7 +1,7 @@
 import React from "react";
 
 const Border = () => (
-    <div class="border">
+    <div className="border">
         {/* <div class="logo">
             <span class="logo-text">Maomonium</span>
         </div> */}

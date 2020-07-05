@@ -20,7 +20,17 @@ import 'react-responsive-modal/styles.css';
 
 const MainGallery = (data) => {
     const cardData = data.props;
-    // console.log(cardData);
+    // console.log("CARDDATA", cardData);
+
+    let comboData = cardData.items.map((item) => {
+        let result = cardData.categories.find((cat) => {
+            return cat.id === item.category;
+        })
+        return {
+            ...item,
+            color: result.color
+        }
+    });
 
     const [activeFilter, setFilter] = useState(null);
 
@@ -37,8 +47,8 @@ const MainGallery = (data) => {
 
     // CARDS
     const CardList = (cardData) => {
-        let data = cardData.props;
-        // console.log(cardData);
+        let data = comboData;
+        console.log("DATAAAA", data);
     
         const list = data.map((item, index) =>
             <Card props={item} key={index} filter={cardData.filter}/>

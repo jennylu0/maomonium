@@ -116,14 +116,19 @@
         width: 50px;
         left: 0;
         transition: .3s ease all;
-        background-color: $berry;
+        // background-color: $berry;
+        background-color: currentColor;
         transform: skew(0deg, -45deg);
         // display: none;
     }
 
     &-title {
-        opacity:0;
+        position: absolute;
+        left: -50%;
+        top: -50%;
         transition: .3s ease all;
+        z-index: 1;
+        color: $dark-gray;
     }
     &:hover {
         .card-overlay {
@@ -134,7 +139,8 @@
             bottom: 0;
         }
         .card-title {
-            opacity: 1;
+            top: 0;
+            left: 0;
         }
 
     }
