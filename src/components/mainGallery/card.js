@@ -52,7 +52,7 @@ const Card = (props) => {
         {isActive &&
         <div className="card" onClick={onOpenModal}>
             <div className="card-wrapper">
-                <div className="card-header">
+                {/* <div className="card-header">
                     <div className="card-header--title-area">
                         <span className="card-header--title">
                             {data.title}
@@ -74,8 +74,11 @@ const Card = (props) => {
                     <div className={`card-header--label card-header--label-${data.category}`}>
                         <span className="card-header--label-wrapper"><img src="https://placehold.it/50x50" className="card-header--label-icon"/></span>
                     </div>
-                </div>
+                </div> */}
                 <div className="card-body">
+                    <div className="card-overlay">
+                        <div className="card-title">{data.title}</div>
+                    </div>
                     <div className="card-image-wrapper">
                         <img src={data.thumbnail} className="card-image" />
                     </div>

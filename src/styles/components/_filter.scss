@@ -1,7 +1,10 @@
 .filter {
     margin-left: .5em;
     margin-right: .5em;
-
+    border-radius: 2em;
+    padding: .25em .75em;
+    border: 2px solid $berry;
+    border-color: inherit;
     
     &-label {
         color: #fff;
@@ -12,6 +15,7 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 4em;
+        margin-top: 3em;
     }
 
     &-icon {

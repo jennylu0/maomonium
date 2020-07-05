@@ -10,6 +10,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "../styles/main.scss";
 import Sidebar from "./sidebar";
+import Border from "./border";
 import Menu from "./menu";
 
 const Layout = ({ children }) => {
@@ -27,17 +28,21 @@ const Layout = ({ children }) => {
     <>
       <div
       >
-        <main className="main layout">
-          <div className="layout-area layout--sidebar">
-            <Sidebar/>
-          </div>
-          <div className="layout-area layout--main">
-            <div className="layout-container">
-              <Menu/>
-              {children}
+          <div className="main layout">
+            <div className="layout-area layout--sidebar">
+              <Sidebar/>
+            </div>
+            <div className="layout-area layout--main">
+              <div className="layout-container">
+                <Menu/>
+                {children}
+              </div>
             </div>
           </div>
-        </main>
+       
+          <Border />
+        
+        
       </div>
     </>
   )

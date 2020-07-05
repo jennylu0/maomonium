@@ -13,10 +13,10 @@ const Filter = (props) => {
 
     return(
        
-            <div className="filter" onClick={() => handleFilter(filterData.id)}>
-                <div className="filter-icon-wrapper">
+            <div className="filter" onClick={() => handleFilter(filterData.id)} style={{color:filterData.color}}>
+                {/* <div className="filter-icon-wrapper">
                     <img src={filterData.icon} className="filter-icon" />
-                </div>
+                </div> */}
                 <div className="filter-label">
                     {filterData.name}
                 </div>

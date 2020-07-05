@@ -1,3 +1,14 @@
+.border {
+    border: 5px solid $berry;
+    background-color: $dark-gray;
+    position: fixed;
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    left: 50px;
+    top: 50px;
+    z-index: -1;
+}
+
 .layout {
     display: flex;
 
@@ -9,7 +20,7 @@
         flex: 0 0 330px;
         // border: 2px solid pink;
         min-height: 100vh;
-        padding: 2em;
+        padding: 2em 2em 2em 90px;
     }
 
     &--main {
@@ -44,6 +55,24 @@
         display: inline-block;
         position: fixed;
         margin-top: -50px;
+
+        &::before,
+        &::after {
+            content: '';
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            background-color: $berry;
+        }
+
+        &::before {
+            width: 20vh;
+            right: 105%;
+        }
+
+        &::after {
+            width: 50vh;
+        }
     }
 }
 
@@ -53,7 +82,7 @@
     height: 100%;
     justify-content: space-between;
     position: fixed;
-    width: 260px;
+    width: 210px;
     height: calc(100vh - 4em);
 }
 
