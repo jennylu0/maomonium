@@ -1,55 +1,105 @@
+// .menu {
+//     position: fixed;
+//     z-index: 100;
+//     top: 3em;
+//     right: 0em;
+//     text-align: right;
+
+//     &-container {
+//         list-style-type: none;
+//         margin: 0;
+//     }
+
+//     &-item {
+//         text-align: right;
+//         margin-bottom: 1.5em;
+        
+//         &--label {
+//             color: #fff;
+//             // font-size: 18px;
+//             font-weight: bold;
+//             display: block;
+//             padding-right: .5em;
+//         }    
+
+//         &--icon {
+//             display: inline-block;
+//             border-radius: .5em 0 0 .5em;
+//             overflow: hidden;
+//             position: relative;
+//             right: -.5em;
+//             transition: .3s ease all;
+//             // background-color: red;
+//             border: 1px solid $berry;
+//             padding: .5em 1em .5em .5em;
+//             text-align: left;
+
+//             img {
+//                 display: none;
+//                 width: 40px;
+//             }
+
+//             &:hover {
+//                 right: -1px;
+//                 transition: .3s ease all;
+//             }
+//         }
+
+//         &--svg {
+//             width: 100%;
+//             font-size: 16px;
+//             color: $berry;
+//         }
+        
+//     }
+// }
+
 .menu {
     position: fixed;
+    top: -3px;
+    right: 100px;
     z-index: 100;
-    top: 3em;
-    right: 0em;
-    text-align: right;
 
     &-container {
-        list-style-type: none;
-        margin: 0;
+        padding-top: 2em;
+        padding-bottom: .5em;
+        position: relative;
+        border: 3px solid $berry;
+        background-color: #fff;
     }
 
     &-item {
-        text-align: right;
-        margin-bottom: 1.5em;
-        
-        &--label {
-            color: #fff;
-            // font-size: 18px;
-            font-weight: bold;
-            display: block;
-            padding-right: .5em;
-        }    
+        position: relative;
+        a {
+            text-decoration: none;
+            padding: .5em 1em .5em 1em;
+            display: inline-block;
+        }
 
         &--icon {
-            display: inline-block;
-            border-radius: .5em 0 0 .5em;
-            overflow: hidden;
-            position: relative;
-            right: -.5em;
-            transition: .3s ease all;
-            // background-color: red;
-            border: 1px solid $berry;
-            padding: .5em 1em .5em .5em;
-            text-align: left;
-
-            img {
-                display: none;
-                width: 40px;
-            }
-
-            &:hover {
-                right: -1px;
-                transition: .3s ease all;
-            }
+            font-size: 1.25em;
         }
 
         &--svg {
-            width: 100%;
-            font-size: 16px;
             color: $berry;
         }
-        
+
+        &--label {
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            padding-right: 1em;
+            color: $berry;
+            font-weight: bold;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: .3s all ease;
+        }
+
+        &:hover {
+            .menu-item--label {
+                opacity: 1;
+            }
+        }
     }
 }
