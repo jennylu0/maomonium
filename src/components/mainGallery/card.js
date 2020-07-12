@@ -76,9 +76,12 @@ const Card = (props) => {
                     </div>
                 </div> */}
                 <div className="card-body">
-                    <div className="card-title">{data.title}</div>
-                    <div className="card-overlay">
+                    <div className="card-corner"></div>
+                    <div className="card-shade">
+                        <div className="card-title">{data.title}</div>
                     </div>
+                    {/* <div className="card-overlay">
+                    </div> */}
                     <div className="card-image-wrapper">
                         <img src={data.thumbnail} className="card-image" />
                     </div>
