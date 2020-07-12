@@ -88,7 +88,9 @@ const MainGallery = (data) => {
     return (
         <div className="main-gallery">
             <div className="filter-wrapper">
-                <FilterList props={cardData.categories} filterCallback={filterHandler}/>
+                <div className="filter-inner">
+                    <FilterList props={cardData.categories} filterCallback={filterHandler}/>
+                </div>
             </div>
             <Masonry 
                 className="main-gallery-masonry"
