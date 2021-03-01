@@ -28,7 +28,7 @@
     "react-image-gallery": "^1.0.7",
     "react-masonry-component": "^6.2.1",
     "react-responsive-modal": "^5.0.2",
-    "three": "^0.117.1",
+    "three": "^0.125.0",
     "typeface-montserrat": "0.0.75",
     "typeface-space-mono": "0.0.71"
   },
